@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gluster-test-pod
+spec:
+  containers:
+    - name: test-container
+      image: busybox
+      command: ["/bin/sh", "-c", "while true; do date >> /data/gluster-check.txt; sleep 5; done"]
+      volumeMounts:
+        - name: gluster-storage
+          mountPath: "/data"
+  volumes:
+    - name: gluster-storage
+      persistentVolumeClaim:
+        claimName: gluster-pvc-claim
