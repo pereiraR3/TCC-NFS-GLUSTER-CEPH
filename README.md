@@ -21,6 +21,17 @@ Este repositório contém todo o material do Trabalho de Conclusão de Curso (TC
 2. Utilize o script de benchmark para executar os testes de desempenho.
 3. Os resultados serão salvos na pasta `resultados/`.
 
+### Gerar gráfico dos resultados
+
+Para gerar o gráfico de vazão (MiB/s) por tamanho (GiB) a partir das planilhas em `resultados/`, execute:
+
+```bash
+python3 resultados/dashboard.py
+```
+
+O arquivo é salvo em `resultados/dashboard.png`.
+Se a execução falhar por falta de dependência, instale o Pillow com `python3 -m pip install pillow`.
+
 ### Objetivo
 
 O projeto visa fornecer uma análise comparativa entre NFS, GlusterFS e Ceph, auxiliando na escolha da melhor solução de armazenamento distribuído para diferentes cenários.
